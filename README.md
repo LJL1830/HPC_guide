@@ -17,9 +17,9 @@ The following files are provided as shortcuts:
 
 | File | Use |
 | --- | --- |
-| [`analysis_requirements.txt`](analysis_requirements.txt) | Install all packages required by `analysis_env`. |
+| [`analysis_requirements.txt`](analysis_requirements.txt) | Package list used to reproduce the tested `analysis_env`. |
 | [`activate_analysis.sh`](activate_analysis.sh) | Load the analysis modules and activate `analysis_env`. |
-| [`model_requirements.txt`](model_requirements.txt) | Record the packages in the existing `model_env`. |
+| [`model_requirements.txt`](model_requirements.txt) | Reference record of packages in the tested `model_env`. |
 | [`activate_model.sh`](activate_model.sh) | Load the model modules and activate `model_env`. |
 | [`modules.txt`](modules.txt) | Record the working module stack. |
 | [`run_FengWu.py`](run_FengWu.py) | Run the provided FengWu forecast and save WeatherBench2-style Zarr output. |
@@ -164,7 +164,7 @@ analysis_env OK
 
 `analysis_env` is now ready. You can continue to Part II.
 
-## 7.Reuse, Add Packages, and Update `analysis_env`
+## 7. Reuse, Add Packages, and Update `analysis_env`
 
 In every new terminal, use the shortcut:
 
@@ -230,7 +230,7 @@ Review the new file before replacing the shared `analysis_requirements.txt`.
 
 The model environment is separate from the analysis environment. Packages installed in one environment do not automatically appear in the other.
 
-The model_env is used for running AI weather models with Earth2Studio. This manual uses FengWu as the tested example. Other models may require different optional packages, PyTorch or CUDA versions, and system libraries. Before running another model, check that model's installation instructions and add its required dependencies to `model_env`.
+The `model_env` is used for running AI weather models with Earth2Studio. This manual uses FengWu as the tested example. Other models may require different optional packages, PyTorch or CUDA versions, and system libraries. Before running another model, check that model's installation instructions and add its required dependencies to `model_env`.
 
 > [!WARNING]
 > `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster.
@@ -238,7 +238,7 @@ The model_env is used for running AI weather models with Earth2Studio. This manu
 > [!NOTE]
 > The FengWu setup in this repository records an environment and workflow that have been tested successfully on the target cluster. It is intended as a working example rather than a universal Earth2Studio installation guide.
 >
-> Package versions, module versions, GPU configuration, and cluster settings may change over time. If your cluster output differs from this guide, do not guess replacement versions. Please Check `module spider` and the official documentation.
+> Package versions, module versions, GPU configuration, and cluster settings may change over time. If your cluster output differs from this guide, do not guess replacement versions. Please check `module spider` and the official documentation.
 
 ## 8. Load the Model Modules
 
@@ -455,7 +455,7 @@ Use `run_FengWu.slurm` for the final CUDA and GPU test.
 | Error | First Action |
 | --- | --- |
 | `python: command not found` | Load the required Python module. Use `module spider python` if the version is unknown. |
-| `uv: command not found` | Activate the target environment, then install `uv` with `python -m pip install --no-index uv`. |
+| `uv: command not found` | Activate the target environment, then install `uv` with `python -m pip install uv`. |
 | `ModuleNotFoundError` | Run `which python`, activate the correct environment, and use `uv pip show PACKAGE`. |
 | `No matching distribution` | Run `avail_wheels PACKAGE` and check the Python and package versions. |
 | `file:///tmp` cannot be found | The requirement file contains a temporary build path and cannot be moved directly. |
