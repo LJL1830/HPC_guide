@@ -321,7 +321,7 @@ YEAR = 2020
 N_STEPS = 40
 ```
 
-The provided program is configured and tested for YEAR = 2020. Change `YEAR` when another year is required. Change `N_STEPS` only when a different forecast length is required.
+The provided program is configured and tested for YEAR = 2020. Running another year may require corresponding changes to the output directory, file names, and Slurm settings. Change `N_STEPS` only when a different forecast length is required.
 
 The program uses the current user's `$SCRATCH` directory for completed output and `$SLURM_TMPDIR` for temporary files. You do not need to copy another user's storage path.
 
