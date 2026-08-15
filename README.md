@@ -100,7 +100,7 @@ uv --version
 
 The provided `analysis_requirements.txt` is the installation shortcut. You do not need to install the packages one by one.
 
-Make sure `analysis_env` is active. Then tell `uv` where the Alliance wheelhouse is located:
+Make sure analysis_env is active. Before installing packages, tell uv where to find the Python packages provided by the Alliance:
 
 ```bash
 export UV_FIND_LINKS="/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/$RSNT_ARCH,/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic"
