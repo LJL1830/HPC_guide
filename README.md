@@ -342,7 +342,7 @@ If you need to install an additional package in `model_env`, use the same proced
 Make sure `model_env` is active before installing the package.
 
 > [!WARNING]
-> Be careful when changing core packages in `model_env`, especially PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies. Changing these packages may break the tested GPU environment. Ask the project administrator before upgrading or replacing them.
+> Be careful when changing core packages in `model_env`, especially PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies. Changing these packages may break the tested GPU environment. 
 
 ## 13. Understand the Provided FengWu Program
 
