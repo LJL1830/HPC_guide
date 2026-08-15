@@ -332,7 +332,7 @@ python --version
 
 Always use `source`. Do not run `bash activate_model.sh`.
 
-If you need to install an additional package in `model_env`, follow the [package installation steps in Section 7](#7-reuse-and-update-analysis_env).
+If you need to install an additional package in `model_env`, follow the [package installation steps in Section 7](#install-additional-packages).
 > [!WARNING]
 > Do not upgrade or replace core packages such as PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies unless necessary, because this may break the tested GPU environment.
 
