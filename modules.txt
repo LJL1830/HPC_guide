@@ -24,5 +24,5 @@ gdrcopy/2.3.1
 ucx-cuda/1.14.1
 nccl/2.26.2
 ucc-cuda/1.2.0
-cuda/12.6
+cuda/12.2
 mpi4py/4.1.0
