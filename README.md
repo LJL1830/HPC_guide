@@ -205,7 +205,7 @@ The `model_env` described below is designed for **FengWu**. Other Earth2Studio m
 > [!NOTE]
 > The FengWu setup in this repository records an environment and workflow that have been tested successfully on the target cluster. It is intended as a working example rather than a universal Earth2Studio installation guide.
 >
-> Package versions, module versions, GPU configuration, and cluster settings may change over time. If your cluster output differs from this guide, do not guess replacement versions. Check `module spider`, the official documentation, or ask the project administrator.
+> Package versions, module versions, GPU configuration, and cluster settings may change over time. If your cluster output differs from this guide, do not guess replacement versions. Please Check `module spider` and the official documentation.
 
 ## 8. Load the Model Modules
 
