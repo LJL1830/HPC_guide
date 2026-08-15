@@ -216,7 +216,7 @@ uv pip check
 
 Replace `PACKAGE_NAME` with the name of the package you want to install.
 
-When possible, use packages provided by the Alliance wheelhouse first. If a package cannot be installed successfully, do not repeatedly change package versions at random. Check the package documentation or ask the project administrator.
+When possible, use packages provided by the Alliance wheelhouse first. If a package cannot be installed successfully, do not repeatedly change package versions at random. Please check the package documentation.
 
 After adding or removing packages from `analysis_env`, you can save an updated package list:
 
@@ -315,7 +315,7 @@ python -c "import earth2studio, torch, onnxruntime; print('model imports OK')"
 
 This is only an import check. CUDA and GPU execution must be checked through a Slurm GPU job.
 
-## 12. Reuse `model_env`
+## 12. Reuse and Add Packages to `model_env`
 
 In every new terminal, use the provided shortcut:
 
@@ -331,6 +331,18 @@ python --version
 ```
 
 Always use `source`. Do not run `bash activate_model.sh`.
+
+If you need to install an additional package in `model_env`, use the same procedure described in Section 7:
+
+1. Check the package with `avail_wheels PACKAGE_NAME`.
+2. Prefer `uv pip install --no-index PACKAGE_NAME` when an Alliance wheel is available.
+3. If it is not available, try `uv pip install PACKAGE_NAME`.
+4. Run `uv pip check` after installation.
+
+Make sure `model_env` is active before installing the package.
+
+> [!WARNING]
+> Be careful when changing core packages in `model_env`, especially PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies. Changing these packages may break the tested GPU environment. Ask the project administrator before upgrading or replacing them.
 
 ## 13. Understand the Provided FengWu Program
 
