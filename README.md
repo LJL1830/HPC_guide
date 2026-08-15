@@ -108,7 +108,7 @@ export UV_FIND_LINKS="/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/$RSN
 Install the packages and check the result:
 
 ```bash
-uv pip install --no-index -r analysis_requirements.txt
+uv pip install -r analysis_requirements.txt
 uv pip check
 ```
 
