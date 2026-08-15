@@ -178,7 +178,6 @@ After adding or removing packages, save a new package list:
 
 ```bash
 uv pip freeze > analysis_requirements_new.txt
-less analysis_requirements_new.txt
 ```
 
 Review the new file before replacing the shared `analysis_requirements.txt`.
