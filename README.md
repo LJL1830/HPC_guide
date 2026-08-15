@@ -4,7 +4,7 @@ This manual is written for Atmospheric Science students who are using the Digita
 
 You will create two independent Python environments:
 
-- `analysis_env` is used for Jupyter, data analysis, plotting, NetCDF, xarray, and Dask.
+- `analysis_env` is used for Jupyter, data analysis, plotting, and processing scientific datasets such as NetCDF files with tools like xarray and Dask.
 - `model_env` is used for running AI weather models with Earth2Studio. FengWu is used as the example model in this manual. Other available models can be found at [Earth2Studio Prognostic Models](https://nvidia.github.io/earth2studio/modules/models_px.html).
 
 Complete `analysis_env` first. Make sure it works before starting `model_env`.
