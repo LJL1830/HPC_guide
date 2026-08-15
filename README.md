@@ -199,6 +199,9 @@ The model environment is separate from the analysis environment. Packages instal
 
 The `model_env` described below is designed for **FengWu**. Other Earth2Studio models may require different optional packages, PyTorch or CUDA versions, and system libraries. Before running another model, check that model's installation instructions and add its required dependencies to `model_env`.
 
+> [!WARNING]
+> `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster. Ask the project administrator to review it when rebuilding the full model environment.
+> 
 ## 8. Load the Model Modules
 
 Start from a clean module stack:
@@ -275,9 +278,6 @@ python -c "import earth2studio, torch, onnxruntime; print('model imports OK')"
 
 This is only an import check. CUDA and GPU execution must be checked through a Slurm GPU job.
 
-> [!WARNING]
-> `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster. Ask the project administrator to review it when rebuilding the full model environment.
-
 ## 12. Reuse `model_env`
 
 In every new terminal, use the provided shortcut:
@@ -316,7 +316,7 @@ YEAR = 2020
 N_STEPS = 40
 ```
 
-Change `YEAR` when another year is required. Change `N_STEPS` only when a different forecast length is required.
+The provided program is configured and tested for YEAR = 2020. Change `YEAR` when another year is required. Change `N_STEPS` only when a different forecast length is required.
 
 The program uses the current user's `$SCRATCH` directory for completed output and `$SLURM_TMPDIR` for temporary files. You do not need to copy another user's storage path.
 
@@ -331,8 +331,6 @@ Each daily store has a name similar to:
 ```text
 fengwu_2020010100.zarr
 ```
-
-The year in the directory and filenames follows the `YEAR` setting.
 
 > [!IMPORTANT]
 > This program requires a GPU. Do not run it directly on the login node. Submit it through Slurm.
