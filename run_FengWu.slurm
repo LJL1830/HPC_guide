@@ -5,7 +5,6 @@
 #SBATCH --mem=128G
 #SBATCH --time=24:00:00
 #SBATCH --tmp=300G
-#SBATCH --exclude=fc10507,fc10509,fc10510,fc10511,fc10417
 #SBATCH --output=FengWu_2020_%j.out
 
 set -e
