@@ -372,14 +372,17 @@ Check the job:
 ```bash
 squeue --me
 ```
+View the job log directly from the file browser.
 
-View the job log:
+After the job starts, a log file will appear in the same directory as the Slurm script. Its name will look like:
 
-```bash
-tail -f FengWu_2020_JOBID.out
+```text
+FengWu_2020_JOBID.out
 ```
 
-Replace `JOBID` with the number returned by `sbatch`.
+Open this file directly to view the job output and error messages.
+
+`JOBID` is the job number returned by `sbatch`.
 
 ## 15. Check `model_env`
 
