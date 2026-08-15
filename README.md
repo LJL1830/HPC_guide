@@ -384,6 +384,13 @@ Open this file directly to view the job output and error messages.
 
 `JOBID` is the job number returned by `sbatch`.
 
+To stop a running or queued job:
+
+```bash
+scancel JOBID
+```
+Replace `JOBID` with the job number.
+
 ## 15. Check `model_env`
 
 The following checks are safe on the login node:
