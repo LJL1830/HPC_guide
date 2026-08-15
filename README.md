@@ -140,15 +140,6 @@ jupyter kernelspec list
 
 Open JupyterHub and select **Python (analysis_env)**.
 
-Run this code in a notebook:
-
-```python
-import sys
-print(sys.executable)
-```
-
-The output should point to the Python inside `analysis_env`.
-
 ## 6. Check `analysis_env`
 
 Run the complete check:
