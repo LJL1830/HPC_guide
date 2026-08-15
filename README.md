@@ -315,7 +315,7 @@ python -c "import earth2studio, torch, onnxruntime; print('model imports OK')"
 
 This is only an import check. CUDA and GPU execution must be checked through a Slurm GPU job.
 
-## 12. Reuse and Add Packages to `model_env`
+## 12. Reuse `model_env`
 
 In every new terminal, use the provided shortcut:
 
@@ -332,17 +332,9 @@ python --version
 
 Always use `source`. Do not run `bash activate_model.sh`.
 
-If you need to install an additional package in `model_env`, use the same procedure described in Section 7:
-
-1. Check the package with `avail_wheels PACKAGE_NAME`.
-2. Prefer `uv pip install --no-index PACKAGE_NAME` when an Alliance wheel is available.
-3. If it is not available, try `uv pip install PACKAGE_NAME`.
-4. Run `uv pip check` after installation.
-
-Make sure `model_env` is active before installing the package.
-
+If you need to install an additional package in `model_env`, follow the [package installation steps in Section 7](#7-reuse-and-update-analysis_env).
 > [!WARNING]
-> Be careful when changing core packages in `model_env`, especially PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies. Changing these packages may break the tested GPU environment. 
+> Do not upgrade or replace core packages such as PyTorch, ONNX Runtime, CUDA-related packages, or Earth2Studio dependencies unless necessary, because this may break the tested GPU environment.
 
 ## 13. Understand the Provided FengWu Program
 
