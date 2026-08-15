@@ -258,8 +258,7 @@ uv --version
 If it is not found, install it inside `model_env`:
 
 ```bash
-avail_wheels uv
-python -m pip install --no-index uv
+python -m pip install uv
 uv --version
 ```
 
