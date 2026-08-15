@@ -176,47 +176,33 @@ Always use `source`.
 
 ### Install Additional Packages
 
-If you need an additional Python package, first make sure that the correct environment is active.
+If you need to install an additional Python package, first make sure that analysis_env is active.
 
-For `analysis_env`:
+Before installing packages, set the Alliance wheelhouse locations:
 
-```bash
-source ./activate_analysis.sh
-```
-
-Before installing the package, set the Alliance wheelhouse locations:
-
-```bash
 export UV_FIND_LINKS="/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/$RSNT_ARCH,/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic"
-```
 
-First check whether the package is available from the Alliance wheelhouse:
+You can check whether the package is available from the Alliance wheelhouse:
 
-```bash
 avail_wheels PACKAGE_NAME
-```
 
-If the package is available, install it from the Alliance wheelhouse:
+When possible, use the Alliance-provided package first:
 
-```bash
 uv pip install --no-index PACKAGE_NAME
-```
 
-If the package is not available from the Alliance wheelhouse, try the regular installation command:
+The --no-index option tells uv to use the configured Alliance wheelhouse instead of searching an external package registry.
 
-```bash
+If the package is not available from the Alliance wheelhouse, use the regular installation command:
+
 uv pip install PACKAGE_NAME
-```
 
-After installing a package, check that the environment is still consistent:
+After installation, check that the environment is still consistent:
 
-```bash
 uv pip check
-```
 
-Replace `PACKAGE_NAME` with the name of the package you want to install.
+Replace PACKAGE_NAME with the name of the package you want to install.
 
-When possible, use packages provided by the Alliance wheelhouse first. If a package cannot be installed successfully, do not repeatedly change package versions at random. Please check the package documentation.
+If a package cannot be installed successfully, check its documentation before changing package versions or dependencies.
 
 After adding or removing packages from `analysis_env`, you can save an updated package list:
 
