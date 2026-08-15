@@ -473,6 +473,6 @@ Use `run_FengWu.slurm` for the final CUDA and GPU test.
 - [uv Package Management](https://docs.astral.sh/uv/pip/packages/)
 
 Module versions, wheel versions, Jupyter pages, and host names may change. If the live cluster output differs from this manual, follow `module spider`, the official cluster documentation, and the administrator's instructions.
-## License
+# License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
