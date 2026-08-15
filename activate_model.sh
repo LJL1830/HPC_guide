@@ -12,6 +12,5 @@ module load arrow
 module load eccodes
 
 module load mpi4py
-module load arrow
 
 source ~/model_env/bin/activate
