@@ -176,35 +176,45 @@ Always use `source`.
 
 ### Install Additional Packages
 
-If you need to install an additional Python package, first make sure that analysis_env is active.
+If you need to install an additional Python package, first make sure that `analysis_env` is active.
 
 Before installing packages, set the Alliance wheelhouse locations:
 
+```bash
 export UV_FIND_LINKS="/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/$RSNT_ARCH,/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic"
+```
 
 You can check whether the package is available from the Alliance wheelhouse:
 
+```bash
 avail_wheels PACKAGE_NAME
+```
 
 When possible, use the Alliance-provided package first:
 
+```bash
 uv pip install --no-index PACKAGE_NAME
+```
 
-The --no-index option tells uv to use the configured Alliance wheelhouse instead of searching an external package registry.
+The `--no-index` option tells `uv` to use the configured Alliance wheelhouse instead of searching an external package registry.
 
 If the package is not available from the Alliance wheelhouse, use the regular installation command:
 
+```bash
 uv pip install PACKAGE_NAME
+```
 
 After installation, check that the environment is still consistent:
 
+```bash
 uv pip check
+```
 
-Replace PACKAGE_NAME with the name of the package you want to install.
+Replace `PACKAGE_NAME` with the name of the package you want to install.
 
 If a package cannot be installed successfully, check its documentation before changing package versions or dependencies.
 
-After adding or removing packages from `analysis_env`, you can save an updated package list:
+After adding or removing packages, you can save an updated package list:
 
 ```bash
 uv pip freeze > analysis_requirements_new.txt
