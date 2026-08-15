@@ -373,10 +373,10 @@ Check the job:
 squeue --me
 ```
 
-Read the output file after the job starts or finishes:
+View the job log:
 
 ```bash
-less FengWu_2020_JOBID.out
+tail -f FengWu_2020_JOBID.out
 ```
 
 Replace `JOBID` with the number returned by `sbatch`.
