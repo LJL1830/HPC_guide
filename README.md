@@ -200,7 +200,7 @@ The model environment is separate from the analysis environment. Packages instal
 The `model_env` described below is designed for **FengWu**. Other Earth2Studio models may require different optional packages, PyTorch or CUDA versions, and system libraries. Before running another model, check that model's installation instructions and add its required dependencies to `model_env`.
 
 > [!WARNING]
-> `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster. Ask the project administrator to review it when rebuilding the full model environment.
+> `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster.
 > 
 ## 8. Load the Model Modules
 
