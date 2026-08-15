@@ -201,7 +201,13 @@ The `model_env` described below is designed for **FengWu**. Other Earth2Studio m
 
 > [!WARNING]
 > `model_requirements.txt` is a record of the existing cluster environment. It contains cluster-specific versions and temporary build paths such as `file:///tmp`. Do not treat it as a general one-command installer on another account or cluster.
-> 
+>
+
+> [!NOTE]
+> The FengWu setup in this repository records an environment and workflow that have been tested successfully on the target cluster. It is intended as a working example rather than a universal Earth2Studio installation guide.
+>
+> Package versions, module versions, GPU configuration, and cluster settings may change over time. If your cluster output differs from this guide, do not guess replacement versions. Check `module spider`, the official documentation, or ask the project administrator.
+
 ## 8. Load the Model Modules
 
 Start from a clean module stack:
