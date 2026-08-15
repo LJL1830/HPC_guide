@@ -164,7 +164,7 @@ analysis_env OK
 
 `analysis_env` is now ready. You can continue to Part II.
 
-## 7. Reuse and Update `analysis_env`
+## 7.Reuse, Add Packages, and Update `analysis_env`
 
 In every new terminal, use the shortcut:
 
@@ -172,9 +172,53 @@ In every new terminal, use the shortcut:
 source ./activate_analysis.sh
 ```
 
-Always use `source`. Running `bash activate_analysis.sh` will not keep the environment active in the current terminal.
+Always use `source`. 
 
-After adding or removing packages, save a new package list:
+### Install Additional Packages
+
+If you need an additional Python package, first make sure that the correct environment is active.
+
+For `analysis_env`:
+
+```bash
+source ./activate_analysis.sh
+```
+
+Before installing the package, set the Alliance wheelhouse locations:
+
+```bash
+export UV_FIND_LINKS="/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/$RSNT_ARCH,/cvmfs/soft.computecanada.ca/custom/python/wheelhouse/generic"
+```
+
+First check whether the package is available from the Alliance wheelhouse:
+
+```bash
+avail_wheels PACKAGE_NAME
+```
+
+If the package is available, install it from the Alliance wheelhouse:
+
+```bash
+uv pip install --no-index PACKAGE_NAME
+```
+
+If the package is not available from the Alliance wheelhouse, try the regular installation command:
+
+```bash
+uv pip install PACKAGE_NAME
+```
+
+After installing a package, check that the environment is still consistent:
+
+```bash
+uv pip check
+```
+
+Replace `PACKAGE_NAME` with the name of the package you want to install.
+
+When possible, use packages provided by the Alliance wheelhouse first. If a package cannot be installed successfully, do not repeatedly change package versions at random. Check the package documentation or ask the project administrator.
+
+After adding or removing packages from `analysis_env`, you can save an updated package list:
 
 ```bash
 uv pip freeze > analysis_requirements_new.txt
