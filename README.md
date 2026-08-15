@@ -67,7 +67,7 @@ source ~/analysis_env/bin/activate
 
 The environment name should appear at the beginning of the terminal:
 
-![Activated analysis environment](assets/analysis-env-activated.png)
+![Activated analysis environment](./assets/analysis-env-activated.png)
 
 Check the environment:
 
