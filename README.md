@@ -1,6 +1,6 @@
 # HPC Environment Setup Guide
 
-This manual is written for Atmospheric Science students who are using an HPC cluster for the first time.
+This manual is written for Atmospheric Science students who are using the Digital Research Alliance of Canada HPC environment, especially the Fir cluster, for the first time.
 
 You will create two independent Python environments:
 
