@@ -91,8 +91,7 @@ uv --version
 If the terminal says `uv: command not found`, install it once inside the active environment:
 
 ```bash
-avail_wheels uv
-python -m pip install --no-index uv
+python -m pip install uv
 uv --version
 ```
 
