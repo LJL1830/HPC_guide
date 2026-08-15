@@ -416,6 +416,7 @@ Use `run_FengWu.slurm` for the final CUDA and GPU test.
 | Jupyter uses the wrong Python | Select **Python (analysis_env)** and check `sys.executable`. |
 | CUDA is unavailable on the login node | Submit a GPU job with Slurm. |
 | GPU packages fail in the Slurm job | Record `module list`, `nvidia-smi`, the Python version, and package versions, then contact the administrator. |
+| The job completes GPU inference but terminates unexpectedly afterward | Check your storage quota, especially `$HOME` and `$SCRATCH`. The job may fail when saving or moving output files if the available storage space is insufficient. |
 
 # References
 
